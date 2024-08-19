@@ -29,3 +29,29 @@ else if(firstThrow < secondThrow){
 else{
     winnerDice.innerHTML = 'I dadi hanno pareggiato';
 }
+
+// MAIL
+
+
+const resultMail = document.getElementById('email');
+const button = document.querySelector('button');
+const resultMessage = document.getElementById('message');
+
+const mailList = ['armando.truglio@gmail.com', 'tizio.caio@icloud.com', 'tal.deitali@hotmail.it' ];
+
+
+button.addEventListener('click', function (){
+    const mail = resultMail.value.trim();
+    let contain = 0;
+    
+    for(let i=0; i<mailList.length; i++){
+        if(mailList[i] === mail) contain = 1;
+    }
+
+    if(contain){
+        resultMessage.innerHTML = 'Sei autorizzato ad accedere';
+    }
+    else{
+        resultMessage.innerHTML = 'Non sei autorizzato ad accedere';
+    }
+})
